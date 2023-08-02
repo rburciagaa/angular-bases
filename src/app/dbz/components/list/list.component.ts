@@ -11,9 +11,15 @@ export class ListComponent {
   characterList:Character[]=[]
   @Output()
   onDeleteIndex:EventEmitter<number>=new EventEmitter()
-
+  @Output()
+  onDeleteCharacterById:EventEmitter<string>=new EventEmitter()
 
   onDeleteCharacter(index:number):void{
     this.onDeleteIndex.emit(index);    
   }
+
+  deleteCharacterById(id:string):void{
+    this.onDeleteCharacterById.emit(id)
+  }
+
 }
